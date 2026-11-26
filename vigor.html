@@ -1,0 +1,161 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vigor | Tecnología para bomberos</title>
+<meta name="description" content="El centro de mando de su Cuerpo de Bomberos. Guardia, despacho, mapa, clima y carros integrados en una sola plataforma, con información en tiempo real."><link rel="canonical" href="https://obsidiancore.cl/vigor.html"><link rel="icon" href="assets/vigor-favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="assets/vigor-favicon-32.png"><link rel="apple-touch-icon" href="assets/vigor-apple-touch-icon.png"><meta name="theme-color" content="#0A2230"><meta property="og:type" content="website"><meta property="og:site_name" content="Obsidian Core"><meta property="og:title" content="Vigor | Tecnología para bomberos"><meta property="og:description" content="El centro de mando de su Cuerpo de Bomberos. Guardia, despacho, mapa, clima y carros integrados en una sola plataforma, con información en tiempo real."><meta property="og:url" content="https://obsidiancore.cl/vigor.html"><meta property="og:image" content="https://obsidiancore.cl/assets/og-vigor.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Vigor | Tecnología para bomberos"><meta name="twitter:description" content="El centro de mando de su Cuerpo de Bomberos. Guardia, despacho, mapa, clima y carros integrados en una sola plataforma, con información en tiempo real."><meta name="twitter:image" content="https://obsidiancore.cl/assets/og-vigor.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"><script>document.documentElement.classList.add('js')</script>
+<style>
+:root { --navy: #0A2230; --deep: #061923; --ink: #34505F; --mu: #6A8493; --teal: #12A7B0; --line: #DCE9F1; --sky: #EAF4FA; --sky2: #D5E7F2; --g1: #2DB6E3; --g2: #34D09A; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; overflow-x: clip; }
+body { background: #fff; color: var(--navy); font-family: 'Montserrat', system-ui, sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+a { color: inherit; text-decoration: none; }
+.wrap { width: min(1200px, 100% - 64px); margin: 0 auto; }
+em { font-style: normal; background: linear-gradient(100deg, var(--g1), var(--g2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+header { position: fixed; inset: 0 0 auto 0; z-index: 40; transition: background .3s, box-shadow .3s; }
+header.solid { background: rgba(255,255,255,.92); backdrop-filter: blur(16px); box-shadow: 0 1px 0 var(--line); }
+header .wrap { height: 84px; display: flex; align-items: center; justify-content: space-between; }
+header .lg { height: 40px; display: block; }
+nav { display: flex; align-items: center; gap: 36px; font: 600 14px 'Montserrat'; color: var(--ink); } nav a:hover { color: var(--teal); }
+.pill { display: inline-flex; align-items: center; gap: 10px; font: 700 14px 'Montserrat'; padding: 15px 30px; border-radius: 999px; background: linear-gradient(135deg, var(--g1), var(--g2)); color: #fff; transition: transform .2s, box-shadow .2s; } .pill:hover { transform: translateY(-2px); box-shadow: 0 16px 36px rgba(45,182,227,.38); color: #fff; }
+nav .pill:hover { color: #fff; } .pill.sm { padding: 11px 22px; font-size: 13px; } .pill.out { background: #fff; color: var(--navy); border: 1.5px solid #C9DBE3; } .pill.out:hover { color: var(--navy); box-shadow: 0 10px 28px rgba(10,34,48,.12); }
+/* portada: cordillera */
+.hero { position: relative; overflow: hidden; padding: 160px 0 0; background: linear-gradient(180deg, #fff 0%, var(--sky) 45%, var(--sky2) 100%); }
+.sun { position: absolute; left: 50%; top: 380px; width: 1300px; height: 760px; transform: translateX(-50%); background: radial-gradient(closest-side, rgba(52,208,154,.28), rgba(45,182,227,.12) 50%, transparent); }
+.mt1 { position: absolute; left: 0; bottom: 0; width: 100%; height: 640px; background: url(assets/montanas_alpha.png) left bottom / auto 640px no-repeat; }
+.mt2 { position: absolute; right: 0; bottom: 0; width: 100%; height: 500px; background: url(assets/montanas_alpha.png) left bottom / auto 500px no-repeat; transform: scaleX(-1); opacity: .7; }
+.hero .txt { position: relative; z-index: 3; text-align: center; }
+.tag { font: 700 12px 'Montserrat'; letter-spacing: .4em; } .tag em { background: none; -webkit-text-fill-color: var(--teal); color: var(--teal); }
+h1 { font: 800 clamp(40px, 5.2vw, 76px)/1.06 'Montserrat'; letter-spacing: -.045em; margin: 26px auto; max-width: 1020px; }
+.lead { font: 500 clamp(16px, 1.4vw, 19px)/1.75 'Montserrat'; color: var(--ink); max-width: 620px; margin: 0 auto; }
+.cta { display: flex; gap: 14px; justify-content: center; margin-top: 38px; flex-wrap: wrap; }
+.devices { position: relative; z-index: 3; width: min(1100px, 92%); height: 600px; margin: 70px auto 120px; }
+.mon, .tab, .ph { background: var(--deep); } .mon { border-radius: 16px; padding: 7px; box-shadow: 0 34px 80px rgba(6,25,35,.32); } .mon img { display: block; width: 100%; border-radius: 9px; }
+.tab { border-radius: 22px; padding: 8px; box-shadow: 0 30px 70px rgba(6,25,35,.34); } .tab img { display: block; width: 100%; border-radius: 15px; }
+.ph { border-radius: 30px; padding: 6px; box-shadow: 0 30px 70px rgba(6,25,35,.38); } .ph img { display: block; width: 100%; border-radius: 24px; }
+.devices .hc { position: absolute; left: 50%; top: 0; width: 72%; transform: translateX(-50%); box-shadow: 0 50px 110px rgba(6,25,35,.4); }
+.devices .hl { position: absolute; left: 1%; bottom: 10px; width: 17%; } .devices .hr { position: absolute; right: 0; bottom: 30px; width: 30%; }
+/* cifras */
+.facts { position: relative; z-index: 5; margin-top: -70px; }
+.facts .card { background: #fff; border-radius: 28px; box-shadow: 0 30px 70px rgba(10,34,48,.14); display: grid; grid-template-columns: repeat(4, 1fr); padding: 40px 20px; }
+.facts .it { padding: 4px 36px; border-left: 1px solid var(--line); } .facts .it:first-child { border-left: 0; } .facts b { display: block; font: 800 46px/1 'Montserrat'; letter-spacing: -.03em; background: linear-gradient(100deg, var(--g1), var(--g2)); -webkit-background-clip: text; background-clip: text; color: transparent; } .facts span { display: block; margin-top: 8px; font: 600 14px/1.4 'Montserrat'; color: var(--ink); }
+/* muestras */
+.sec { position: relative; padding: 140px 0; } .sec.alt { background: linear-gradient(180deg, #F1F8FC, #fff); }
+.show { display: grid; grid-template-columns: 1fr 1.3fr; gap: 80px; align-items: center; } .show.rev { grid-template-columns: 1.3fr 1fr; } .show.rev .tx { order: 2; }
+.num { font: 700 12px 'Montserrat'; letter-spacing: .34em; color: var(--teal); display: flex; align-items: center; gap: 14px; } .num b { font: 300 34px 'Montserrat'; letter-spacing: -.02em; opacity: .5; }
+.tx h2 { font: 800 clamp(30px, 3.4vw, 48px)/1.08 'Montserrat'; letter-spacing: -.035em; margin: 18px 0 18px; }
+.tx > p { font: 500 17px/1.75 'Montserrat'; color: var(--ink); }
+.tx ul { list-style: none; margin-top: 28px; display: grid; gap: 14px; } .tx li { display: flex; gap: 14px; align-items: flex-start; font: 600 15px/1.55 'Montserrat'; color: var(--navy); }
+.tx li i { display: flex; width: 24px; height: 24px; border-radius: 50%; background: linear-gradient(135deg, var(--g1), var(--g2)); align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+.diff { margin-top: 34px; padding: 20px 24px; border-left: 4px solid; border-image: linear-gradient(180deg, var(--g1), var(--g2)) 1; background: var(--sky); font: 600 15px/1.6 'Montserrat'; color: var(--navy); } .alt .diff { background: #fff; }
+.diff small { display: block; font: 700 10px 'Montserrat'; letter-spacing: .3em; color: var(--teal); margin-bottom: 6px; }
+.media { position: relative; aspect-ratio: 1.12 / 1; isolation: isolate; } .media > * { position: absolute; }
+.media::before { content: ''; position: absolute; inset: -5% -4% -5% -4%; border-radius: 40px; background: linear-gradient(145deg, var(--sky), #fff 70%); border: 1px solid var(--line); z-index: -1; } .alt .media::before { background: linear-gradient(145deg, var(--sky2), #fff 80%); }
+.media .main { left: 12%; top: 2%; width: 88%; } .media .main.m2 { left: 0; top: 6%; width: 92%; } .media .m2b { right: 0; top: 52%; width: 46%; }
+.media .s1 { left: 0; top: 46%; width: 52%; } .media .s2 { right: 0; top: 60%; width: 40%; }
+.media .main.m3 { left: 0; top: 4%; width: 86%; } .media .p3 { right: 0; top: 14%; width: 26%; transform: rotate(3deg); }
+.media .main.m4 { left: 14%; top: 4%; width: 86%; } .media .p4a { left: 0; top: 34%; width: 25%; transform: rotate(-3deg); } .media .p4b { left: 22%; top: 52%; width: 22%; transform: rotate(2deg); }
+.media .main.m5 { left: 12%; top: 0; width: 88%; } .media .m5a { left: 0; top: 44%; width: 46%; } .media .m5b { right: 0; top: 62%; width: 42%; }
+/* módulos */
+.mods { position: relative; overflow: hidden; padding: 140px 0 150px; background: linear-gradient(180deg, #fff, var(--sky) 60%, var(--sky2)); }
+.mods::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 320px; background: url(assets/montanas_alpha.png) left bottom / auto 320px no-repeat; opacity: .5; -webkit-mask-image: linear-gradient(to top, #000 20%, transparent); mask-image: linear-gradient(to top, #000 20%, transparent); pointer-events: none; }
+.mods .wrap { position: relative; z-index: 1; }
+.eb { font: 700 12px 'Montserrat'; letter-spacing: .38em; text-transform: uppercase; color: var(--teal); }
+.mods h2, .end h2 { font: 800 clamp(32px, 4vw, 52px)/1.1 'Montserrat'; letter-spacing: -.03em; margin: 20px 0 18px; }
+.sub { font: 500 18px/1.7 'Montserrat'; color: var(--ink); max-width: 620px; }
+.mcards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 60px; }
+.mc { position: relative; background: #fff; border-radius: 22px; padding: 34px 32px 36px 38px; overflow: hidden; box-shadow: 0 1px 0 var(--line), 0 14px 34px rgba(10,34,48,.06); transition: transform .3s, box-shadow .3s; } .mc:hover { transform: translateY(-4px); box-shadow: 0 1px 0 var(--line), 0 26px 52px rgba(10,34,48,.12); }
+.mc::before { content: ''; position: absolute; left: 0; top: 28px; bottom: 28px; width: 5px; border-radius: 0 4px 4px 0; background: var(--c); }
+.mc b { display: block; font: 800 18px 'Montserrat'; letter-spacing: .1em; color: var(--c); } .mc h3 { font: 700 19px/1.3 'Montserrat'; margin: 10px 0 12px; letter-spacing: -.01em; } .mc p { font: 500 14.5px/1.7 'Montserrat'; color: var(--ink); }
+/* cierre */
+.end { position: relative; overflow: hidden; text-align: center; padding: 130px 0 380px; background: linear-gradient(180deg, var(--sky2), #C3DCEB); }
+.end .mt1 { height: 460px; background-size: auto 460px; } .end .mt2 { height: 360px; background-size: auto 360px; }
+.end .wrap { position: relative; z-index: 3; } .end h2 { max-width: 780px; margin-left: auto; margin-right: auto; } .end .sub { margin: 0 auto; } .end .cta { justify-content: center; }
+.blocks { display: flex; justify-content: center; gap: 16px; margin-top: 52px; flex-wrap: wrap; }
+.blk { display: flex; align-items: center; gap: 18px; text-align: left; padding: 18px 30px 18px 18px; border-radius: 20px; min-width: 330px; box-shadow: 0 18px 40px rgba(10,34,48,.14); transition: transform .2s; } .blk:hover { transform: translateY(-3px); }
+.blk i { display: flex; width: 52px; height: 52px; border-radius: 14px; align-items: center; justify-content: center; flex-shrink: 0; } .blk small { display: block; font: 700 10px 'Montserrat'; letter-spacing: .26em; text-transform: uppercase; color: #4F7183; margin-bottom: 3px; } .blk b { font: 600 18px 'Montserrat'; letter-spacing: -.01em; color: var(--navy); }
+.blk.a { background: #E8F5FF; } .blk.a i { background: linear-gradient(135deg, #2DB6E3, #31BFD4); } .blk.b { background: #E4F9F1; } .blk.b i { background: linear-gradient(135deg, #36C6BD, #34D09A); }
+footer { padding: 44px 0; background: #fff; border-top: 1px solid var(--line); position: relative; z-index: 2; } footer .wrap { display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; font: 500 13px 'Montserrat'; color: var(--mu); }
+footer img { height: 34px; display: block; } footer .by { display: flex; align-items: center; gap: 12px; } footer .by img { height: 40px; } footer a:hover { color: var(--teal); }
+.js .rv { opacity: 0; transform: translateY(22px); transition: opacity .9s ease, transform .9s ease; } .js .rv.in { opacity: 1; transform: none; } @media (prefers-reduced-motion: reduce) { .js .rv { opacity: 1; transform: none; transition: none; } html { scroll-behavior: auto; } }
+@media (max-width: 1000px) {
+  .wrap { width: calc(100% - 44px); }
+  header .wrap { height: 68px; } header .lg { height: 32px; } nav a:not(.pill) { display: none; } header { background: rgba(255,255,255,.92); backdrop-filter: blur(14px); }
+  .hero { padding-top: 110px; } .mt1 { height: 360px; background-size: auto 360px; } .mt2 { height: 280px; background-size: auto 280px; }
+  .devices { height: 360px; margin-top: 44px; } .devices .hc { width: 92%; } .devices .hl { width: 24%; bottom: 0; } .devices .hr { display: none; }
+  .facts .card { grid-template-columns: 1fr 1fr; gap: 26px 0; padding: 30px 8px; } .facts .it { padding: 4px 22px; } .facts .it:nth-child(3) { border-left: 0; } .facts b { font-size: 36px; }
+  .sec { padding: 84px 0; } .show, .show.rev { grid-template-columns: 1fr; gap: 44px; } .show.rev .tx { order: 0; } .media { aspect-ratio: 1.05 / 1; }
+  .mods { padding: 90px 0 110px; } .mcards { grid-template-columns: 1fr 1fr; margin-top: 40px; }
+  .end { padding: 90px 0 260px; } .end .mt1 { height: 300px; background-size: auto 300px; } .end .mt2 { height: 240px; background-size: auto 240px; } .blk { min-width: 0; width: 100%; } .blk b { font-size: 16px; overflow-wrap: anywhere; }
+}
+@media (max-width: 600px) { .mcards { grid-template-columns: 1fr; } .media { aspect-ratio: 1 / 1; } .devices { height: 300px; } }
+</style></head><body>
+<header id="top"><div class="wrap"><a href="vigor.html" aria-label="Vigor"><img class="lg" src="assets/vigor_oscuro.png" alt="Vigor"></a>
+  <nav><a href="#despacho">Despacho</a><a href="#mapa">Mapa</a><a href="#clima">Clima</a><a href="#modulos">Módulos</a><a href="index.html">Obsidian Core</a></nav></div></header>
+<main>
+<div class="hero">
+  <div class="sun"></div><div class="mt2"></div><div class="mt1"></div>
+  <div class="wrap"><div class="txt">
+    <div class="tag rv">TECNOLOGÍA PARA <em>BOMBEROS</em></div>
+    <h1 class="rv">El centro de mando<br>de su <em>Cuerpo de Bomberos.</em></h1>
+    <p class="lead rv">Guardia, despacho, mapa, clima y carros integrados en una sola plataforma, con información en tiempo real.</p>
+    <div class="cta rv"><a class="pill" href="mailto:ventas@obsidiancore.cl?subject=Solicitud%20de%20demostraci%C3%B3n%20de%20Vigor">Solicitar demostración</a></div>
+  </div></div>
+  <div class="devices rv" aria-hidden="true"><div class="mon hc"><img src="assets/app_consola.jpg" alt=""></div><div class="ph hl"><img src="assets/app_celular.jpg" alt=""></div><div class="tab hr"><img src="assets/s_tablet_parte.jpg" alt=""></div></div>
+</div>
+<div class="facts"><div class="wrap"><div class="card rv">
+  <div class="it"><b>4</b><span>tipos de equipo sincronizados</span></div><div class="it"><b>9</b><span>módulos integrados</span></div><div class="it"><b>8</b><span>perfiles de usuario según cargo</span></div><div class="it"><b>70+</b><span>pantallas y vistas</span></div>
+</div></div></div>
+
+<section class="sec" id="despacho"><div class="wrap"><div class="show">
+  <div class="tx"><div class="num rv"><b>01</b>DESPACHO</div><h2 class="rv">Del despacho en la Central a la unidad, <em>en segundos.</em></h2><p class="rv">El operador despacha la emergencia desde la consola y el aviso se emite de forma simultánea a todos los equipos del Cuerpo.</p>
+    <ul class="rv"><li><i><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></i><span>Claves de emergencia definidas por cada Cuerpo</span></li><li><i><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></i><span>Alerta en cada dispositivo móvil con sonido y vibración, incluso con la aplicación cerrada</span></li><li><i><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></i><span>Pantalla de despacho en la estación del cuartel y alerta en la tableta de la unidad</span></li><li><i><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></i><span>Visualización de compañías con la dotación mínima en tiempo real</span></li></ul>
+    <div class="diff rv"><small>CARACTERÍSTICA DISTINTIVA</small>Un único despacho que llega a todos los equipos de forma simultánea, sin intermediarios.</div></div>
+  <div class="media rv"><div class="mon main"><img src="assets/s_consola.jpg" alt=""></div><div class="mon s1"><img src="assets/s_pc_pantalla_roja.jpg" alt=""></div><div class="tab s2"><img src="assets/s_tablet_alerta_despacho.jpg" alt=""></div></div>
+</div></div></section>
+
+<section class="sec alt" id="mapa"><div class="wrap"><div class="show rev">
+  <div class="tx"><div class="num rv"><b>02</b>MAPA</div><h2 class="rv">Todo el Cuerpo en un <em>mapa en vivo.</em></h2><p class="rv">La Central visualiza la posición de cada unidad y de los puntos relevantes de la comuna; cada carro dispone del mapa en su tableta.</p>
+    <ul class="rv"><li><i><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></i><span>Unidades con seguimiento GPS: posición y velocidad</span></li><li><i><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></i><span>Mapa comunal con el límite de la comuna</span></li><li><i><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></i><span>Puntos propios del Cuerpo: cuarteles, bodegas y otros</span></li><li><i><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></i><span>Ubicación del dispositivo móvil disponible para la Central</span></li></ul>
+    <div class="diff rv"><small>CARACTERÍSTICA DISTINTIVA</small>Una única vista geográfica, actualizada en tiempo real, para la Central, el cuartel y cada unidad.</div></div>
+  <div class="media rv"><div class="mon main m2"><img src="assets/s_central_mapa.jpg" alt=""></div><div class="tab s2 m2b"><img src="assets/s_tablet_mapa.jpg" alt=""></div></div>
+</div></div></section>
+
+<section class="sec" id="clima"><div class="wrap"><div class="show">
+  <div class="tx"><div class="num rv"><b>03</b>CLIMA</div><h2 class="rv">Condiciones meteorológicas <em>en la zona de operación.</em></h2><p class="rv">Viento, temperatura y humedad sobre el mapa, con el nivel de peligro de incendio calculado para la zona.</p>
+    <ul class="rv"><li><i><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></i><span>Peligro de incendio según la regla 30-30-30 (temperatura, humedad y viento)</span></li><li><i><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></i><span>Pronóstico con línea de tiempo de hasta 72 horas</span></li><li><i><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></i><span>Corrección de la temperatura según la altura del relieve</span></li><li><i><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></i><span>Disponible en la Central, la estación del cuartel y el dispositivo móvil</span></li></ul>
+    <div class="diff rv"><small>CARACTERÍSTICA DISTINTIVA</small>Diseñado para incendios forestales: informa cuántas condiciones de riesgo se cumplen y cuánto falta para alcanzar las restantes.</div></div>
+  <div class="media rv"><div class="mon main m3"><img src="assets/s_pc_clima.jpg" alt=""></div><div class="ph p3"><img src="assets/s_mapa_clima.jpg" alt=""></div></div>
+</div></div></section>
+
+<section class="sec alt" id="guardia"><div class="wrap"><div class="show rev">
+  <div class="tx"><div class="num rv"><b>04</b>GUARDIA</div><h2 class="rv">Gestión de la guardia <em>en tiempo real.</em></h2><p class="rv">Cada voluntario registra su estado desde el dispositivo móvil y el cuartel conoce en todo momento el personal disponible.</p>
+    <ul class="rv"><li><i><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></i><span>Estado de servicio de cada bombero en tiempo real</span></li><li><i><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></i><span>Determinación automática del mando según el cargo</span></li><li><i><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></i><span>Guardia nocturna con control de cobertura y cuota</span></li><li><i><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></i><span>Libro de Guardia digital con dotación calculada</span></li></ul>
+    <div class="diff rv"><small>CARACTERÍSTICA DISTINTIVA</small>La dotación disponible se conoce al instante en todos los equipos, sin planillas manuales.</div></div>
+  <div class="media rv"><div class="mon main m4"><img src="assets/s_visual_companias.jpg" alt=""></div><div class="ph p4a"><img src="assets/s_guardia_nocturna_oficial.jpg" alt=""></div><div class="ph p4b"><img src="assets/s_inicio.jpg" alt=""></div></div>
+</div></div></section>
+
+<section class="sec" id="unidad"><div class="wrap"><div class="show">
+  <div class="tx"><div class="num rv"><b>05</b>UNIDAD</div><h2 class="rv">Registro operativo <em>desde cada unidad.</em></h2><p class="rv">Cada carro cuenta con una tableta que permite registrar su operación mientras se desarrolla, sin documentos en papel.</p>
+    <ul class="rv"><li><i><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></i><span>Parte de emergencia completado desde la unidad</span></li><li><i><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></i><span>Bitácora de salidas y checklist con historial</span></li><li><i><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></i><span>Distribución de material en un camión interactivo con sus gavetas</span></li><li><i><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></i><span>Exportación a PDF con formato estándar</span></li></ul>
+    <div class="diff rv"><small>CARACTERÍSTICA DISTINTIVA</small>Lo registrado en la unidad queda disponible de inmediato para la compañía y el Cuerpo.</div></div>
+  <div class="media rv"><div class="tab main m5"><img src="assets/s_tablet_parte.jpg" alt=""></div><div class="tab s1 m5a"><img src="assets/s_tablet_material.jpg" alt=""></div><div class="tab s2 m5b"><img src="assets/s_tablet_checklist.jpg" alt=""></div></div>
+</div></div></section>
+<section class="mods" id="modulos"><div class="wrap">
+  <div class="eb rv">Módulos</div>
+  <h2 class="rv">Módulos del <em>sistema.</em></h2>
+  <p class="sub rv">Vigor se compone de nueve módulos. Cada Cuerpo configura la plataforma con los que su operación requiere y puede incorporar otros a medida que crece.</p>
+  <div class="mcards"><div class="mc rv" style="--c:#5A7686"><b>STATION</b><h3>Base del sistema</h3><p>Hoja de vida de cada voluntario, guardia activa, guardia nocturna, Libro de Guardia, asistencia, actividades, pizarra de avisos, capacitación y especialidades.</p></div><div class="mc rv" style="--c:#0E9C7F"><b>SCRIBE</b><h3>Secretaría y tesorería</h3><p>Actas, sesiones, citaciones y correspondencia; archivo institucional; control de cuotas con planilla mensual, registro de pagos y aviso al deudor.</p></div><div class="mc rv" style="--c:#14A95D"><b>FORGE</b><h3>Inventario y equipamiento</h3><p>Inventario único con categorías, códigos, ubicación y fotografía; ingreso y baja de ítems con respaldo e historial de movimientos.</p></div><div class="mc rv" style="--c:#D8394E"><b>SPARTAN</b><h3>Despacho y operaciones</h3><p>Consola de despacho de la Central, claves de emergencia, alertas en dispositivos móviles, estaciones de cuartel y tabletas de unidad, visual de compañías e historial.</p></div><div class="mc rv" style="--c:#1B8FD6"><b>VANGUARD</b><h3>Gestión de emergencias</h3><p>Parte de emergencia desde la tableta de la unidad, confirmación de la dotación que salió, numeración correlativa y exportación a PDF.</p></div><div class="mc rv" style="--c:#7A55D0"><b>MAINTAINER</b><h3>Flota y mantenciones</h3><p>Ficha técnica de cada unidad, bitácora de salidas, checklist periódico con historial y distribución de material por carro.</p></div><div class="mc rv" style="--c:#12A7B0"><b>SENTINEL</b><h3>Monitoreo y disponibilidad</h3><p>Mapa comunal, GPS de unidades y dispositivos móviles, clima y peligro de incendio, mapa en la tableta de la unidad y terminal de coordenadas.</p></div><div class="mc rv" style="--c:#E0821A"><b>TITAN</b><h3>Modo crisis y grandes despliegues</h3><p>Modo Crisis, batallones con zona, responsable, carros y bomberos, y puestos de mando visibles para la Central y la Comandancia.</p></div><div class="mc rv" style="--c:#B03DAE"><b>INTEL</b><h3>Reportes e información</h3><p>Estadísticas de participación y de emergencias atendidas por compañía y por Cuerpo, con rango de fechas y exportación a PDF.</p></div></div>
+</div></section>
+<section class="end" id="contacto"><div class="mt2"></div><div class="mt1"></div><div class="wrap">
+  <div class="eb rv">CONTACTO</div>
+  <h2 class="rv">Solicite una <em>demostración.</em></h2>
+  <p class="sub rv">Presentamos Vigor con las pantallas correspondientes a cada cargo y a cada unidad del Cuerpo.</p>
+  <div class="blocks rv"><a class="blk a" href="mailto:ventas@obsidiancore.cl"><i><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 7l8.5 6.5L20.5 7"/></svg></i><span><small>Escríbanos</small><b>ventas@obsidiancore.cl</b></span></a><a class="blk b" href="https://instagram.com/vigor__cl" target="_blank" rel="noopener"><i><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r=".7" fill="#fff"/></svg></i><span><small>Síganos</small><b>@vigor__cl</b></span></a></div>
+</div></section>
+</main>
+<footer><div class="wrap"><img src="assets/vigor_oscuro.png" alt="Vigor"><a class="by" href="index.html">Un producto de <img src="assets/obsidian_oscuro.png" alt="Obsidian Core"></a><span>© 2026 Obsidian Core SpA</span></div></footer>
+<script>
+const hd = document.querySelector('header');
+const onScroll = () => hd.classList.toggle('solid', scrollY > 20); onScroll(); addEventListener('scroll', onScroll, { passive: true });
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .12 });
+document.querySelectorAll('.rv').forEach(el => io.observe(el));
+</script></body></html>
